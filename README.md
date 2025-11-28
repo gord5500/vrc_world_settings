@@ -8,7 +8,6 @@ This repository contains JSON files with settings for different VRChat worlds. T
 
 ## Available Files
 
-- **`index.json`** - Main index file listing all available worlds
 - **`world_settings.json`** - Combined settings for multiple worlds
 - **`wrld_example_001.json`** - Settings for Example World 1
 - **`wrld_example_002.json`** - Settings for Example World 2
@@ -20,7 +19,7 @@ This repository contains JSON files with settings for different VRChat worlds. T
 Players can fetch world settings on load using the following URL pattern:
 
 ```
-https://gord5500.github.io/vrc_world_settings/index.json
+https://gord5500.github.io/vrc_world_settings/world_settings.json
 https://gord5500.github.io/vrc_world_settings/wrld_example_001.json
 ```
 
@@ -71,22 +70,6 @@ curl -X POST \
 
 ## JSON Structure
 
-### Index File (`index.json`)
-
-```json
-{
-  "version": "1.0.0",
-  "lastUpdated": "2025-11-28T13:00:00Z",
-  "worlds": [
-    {
-      "worldId": "wrld_example_001",
-      "worldName": "Example World 1",
-      "settingsUrl": "./wrld_example_001.json"
-    }
-  ]
-}
-```
-
 ### World Settings File
 
 ```json
@@ -119,9 +102,8 @@ curl -X POST \
 To add a new world:
 
 1. Create a new JSON file following the structure above (e.g., `wrld_your_world_id.json`)
-2. Update `index.json` to include your new world
-3. Commit and push to the `main` branch
-4. The workflow will automatically deploy the changes
+2. Commit and push to the `main` branch
+3. The workflow will automatically deploy the changes
 
 ## Development
 
@@ -139,8 +121,12 @@ You can test the JSON files locally by serving them with a simple HTTP server:
 
 ```bash
 python -m http.server 8000
-# Then access http://localhost:8000/index.json
+# Then access http://localhost:8000/world_settings.json
 ```
+
+## Branch Protection
+
+This repository uses a CODEOWNERS file to control who can create and merge branches. Only approved code owners can approve and merge pull requests.
 
 ## License
 
