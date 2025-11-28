@@ -1,48 +1,75 @@
 {
   "version": "1.0.0",
+  "lastUpdated": "2025-11-28T13:00:00Z",
   "worlds": [
     {
       "worldId": "wrld_example_001",
       "worldName": "Example World 1",
+      "capacity": 20,
       "settings": {
-        "maxPlayers": 20,
-        "spawnPoint": {
-          "x": 0.0,
-          "y": 1.0,
-          "z": 0.0
+        "movement": {
+          "walkSpeed": 2.0,
+          "runSpeed": 4.0,
+          "strafeSpeed": 2.0,
+          "jumpImpulse": 3.0,
+          "gravity": -9.81
         },
-        "respawnHeight": -10.0,
-        "gravity": -9.81,
-        "jumpImpulse": 3.0,
-        "walkSpeed": 2.0,
-        "runSpeed": 4.0,
-        "voiceDistanceFar": 25.0,
-        "voiceDistanceNear": 0.0,
-        "voiceGain": 15.0,
-        "voiceVolumeFalloffNear": 0.0,
-        "voiceVolumeFalloffFar": 25.0
+        "spawn": {
+          "spawnPoint": {
+            "x": 0.0,
+            "y": 1.0,
+            "z": 0.0
+          },
+          "spawnRotation": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "respawnHeight": -10.0
+        },
+        "voice": {
+          "voiceDistanceFar": 25.0,
+          "voiceDistanceNear": 0.0,
+          "voiceGain": 15.0,
+          "voiceVolumeFalloffNear": 0.0,
+          "voiceVolumeFalloffFar": 25.0,
+          "allowAvatarAudio": true
+        }
       }
     },
     {
       "worldId": "wrld_example_002",
       "worldName": "Example World 2",
+      "capacity": 16,
       "settings": {
-        "maxPlayers": 16,
-        "spawnPoint": {
-          "x": 5.0,
-          "y": 2.0,
-          "z": -3.0
+        "movement": {
+          "walkSpeed": 2.5,
+          "runSpeed": 5.0,
+          "strafeSpeed": 2.5,
+          "jumpImpulse": 4.0,
+          "gravity": -9.81
         },
-        "respawnHeight": -15.0,
-        "gravity": -9.81,
-        "jumpImpulse": 4.0,
-        "walkSpeed": 2.5,
-        "runSpeed": 5.0,
-        "voiceDistanceFar": 30.0,
-        "voiceDistanceNear": 0.0,
-        "voiceGain": 15.0,
-        "voiceVolumeFalloffNear": 0.0,
-        "voiceVolumeFalloffFar": 30.0
+        "spawn": {
+          "spawnPoint": {
+            "x": 5.0,
+            "y": 2.0,
+            "z": -3.0
+          },
+          "spawnRotation": {
+            "x": 0.0,
+            "y": 90.0,
+            "z": 0.0
+          },
+          "respawnHeight": -15.0
+        },
+        "voice": {
+          "voiceDistanceFar": 30.0,
+          "voiceDistanceNear": 0.0,
+          "voiceGain": 15.0,
+          "voiceVolumeFalloffNear": 0.0,
+          "voiceVolumeFalloffFar": 30.0,
+          "allowAvatarAudio": true
+        }
       }
     }
   ]
