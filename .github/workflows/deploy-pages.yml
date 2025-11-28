@@ -1,14 +1,9 @@
 name: Deploy JSON to GitHub Pages
 
 on:
-  # Allows manual trigger from Actions tab
   workflow_dispatch:
-  
-  # Allows trigger from repository_dispatch event
   repository_dispatch:
     types: [deploy-settings]
-  
-  # Trigger on push to main branch
   push:
     branches:
       - main
@@ -16,19 +11,16 @@ on:
       - '**.json'
       - '.github/workflows/deploy-pages.yml'
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
@@ -65,7 +57,6 @@ jobs:
         with:
           path: '_site'
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
